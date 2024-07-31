@@ -5,6 +5,7 @@ public class Cipher {
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter plain text : ");
+
         String plainText = sc.nextLine().trim().toUpperCase();
 
         System.out.print("Enter no. of rows: ");
@@ -52,7 +53,6 @@ public class Cipher {
         }
 
         System.out.println("============================================ Cipher Text ============================================");
-
         System.out.println(cipherText);
     }
 }
