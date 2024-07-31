@@ -7,8 +7,10 @@ public class Cipher {
         System.out.print("Enter plain text : ");
         String plainText = sc.nextLine().trim().toUpperCase();
 
-        System.out.print("Enter no. of rows: ");
-        int rows = sc.nextInt();
+//        System.out.print("Enter no. of rows: ");
+//        int rows = sc.nextInt();
+
+        int rows = plainText.length();
 
         System.out.print("Enter no. of columns: ");
         int columns = sc.nextInt();
