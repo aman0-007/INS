@@ -5,7 +5,7 @@ public class VernarCipher {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter SimpleColumnar Text : ");
+        System.out.print("Enter plain Text : ");
         String plainText = sc.next();
 
         System.out.print("\nEnter Key : ");
@@ -58,15 +58,18 @@ public class VernarCipher {
         int decrypt[] = new int[key.length()];
 
         for(int i = 0; i < key.length(); i++){
-            decrypt[i] = text.charAt(i) - 65;
+            decrypt[i] = text.charAt(i) - key.charAt(i);
         }
 
         for(int i = 0; i < key.length(); i++){
-            int p = decrypt[i] - (key.charAt(i) - 65);
-            if(p<0){
-                p = p + 26;
+            if(decrypt[i] < 0){
+                decrypt[i] = decrypt[i] + 26;
             }
-            decryptedText += (char) (p + 65);
+        }
+
+        for(int i = 0; i < key.length(); i++){
+            int p = decrypt[i] + 26;
+            decryptedText += (char) p;
         }
 
         return decryptedText;
