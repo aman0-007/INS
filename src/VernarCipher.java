@@ -11,7 +11,14 @@ public class VernarCipher {
         System.out.print("\nEnter Key : ");
         String cipherKey = sc.next();
 
-        System.out.println(checkLength(plainText,cipherKey));
+
+        String cipherText = checkLength(plainText,cipherKey);
+        System.out.println("===================================== CIPHER TEXT =====================================");
+        System.out.println(cipherText);
+
+        String deCryptedText = deCrypt(cipherText, cipherKey);
+        System.out.println("===================================== PLAIN TEXT =====================================");
+        System.out.println(deCryptedText);
     }
 
     public static String checkLength(String plainText, String key){
@@ -43,5 +50,25 @@ public class VernarCipher {
             cipherText += (char) c;
         }
         return cipherText;
+    }
+
+    public static String deCrypt(String text, String key){
+        String decryptedText = "";
+
+        int decrypt[] = new int[key.length()];
+
+        for(int i = 0; i < key.length(); i++){
+            decrypt[i] = text.charAt(i) - 65;
+        }
+
+        for(int i = 0; i < key.length(); i++){
+            int p = decrypt[i] - (key.charAt(i) - 65);
+            if(p<0){
+                p = p + 26;
+            }
+            decryptedText += (char) (p + 65);
+        }
+
+        return decryptedText;
     }
 }
