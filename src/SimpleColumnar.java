@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Cipher {
+public class SimpleColumnar {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -53,7 +53,7 @@ public class Cipher {
             }
         }
 
-        System.out.println("============================================ Cipher Text ============================================");
+        System.out.println("============================================ SimpleColumnar Text ============================================");
 
         System.out.println(cipherText);
     }

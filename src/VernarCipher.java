@@ -5,7 +5,7 @@ public class VernarCipher {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter Cipher Text : ");
+        System.out.print("Enter SimpleColumnar Text : ");
         String plainText = sc.next();
 
         System.out.print("\nEnter Key : ");
